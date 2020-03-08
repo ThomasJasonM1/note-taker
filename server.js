@@ -3,7 +3,7 @@ const path = require("path");
 const notes = require('./db/db.json');
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 let id = notes.length;
 
 app.use(express.urlencoded({ extended: true }));
