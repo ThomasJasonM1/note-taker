@@ -3,16 +3,13 @@ const path = require("path");
 const notes = require('./db/db.json');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 let id = notes.length;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    console.log(req.headers.host);
-    console.log(req.baseUrl);
-    console.log(req.originalUrl);
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
