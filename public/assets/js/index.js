@@ -4,15 +4,13 @@ let $saveNoteBtn = $(".save-note");
 let $newNoteBtn = $(".new-note");
 let $noteList = $(".list-container .list-group");
 
-const baseUrl = 'http://localhost:3000'
-
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
 // A function for getting all notes from the db
 let getNotes = function() {
   return $.ajax({
-    url: baseUrl + "/api/notes",
+    url: "/api/notes",
     method: "GET"
   });
 };
@@ -20,7 +18,7 @@ let getNotes = function() {
 // A function for saving a note to the db
 let saveNote = function(note) {
   return $.ajax({
-    url: baseUrl + "/api/notes",
+    url: "/api/notes",
     data: note,
     method: "POST"
   });
@@ -28,8 +26,7 @@ let saveNote = function(note) {
 
 // A function for deleting a note from the db
 let deleteNote = function(id) {
-  let url = baseUrl + "/api/notes/" + id;
-  console.log(id);
+  let url = "/api/notes/" + id;
   return $.ajax({
     url: url,
     method: "DELETE"
