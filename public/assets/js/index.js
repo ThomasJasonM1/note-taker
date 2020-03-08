@@ -28,8 +28,10 @@ let saveNote = function(note) {
 
 // A function for deleting a note from the db
 let deleteNote = function(id) {
+  let url = baseUrl + "/api/notes/" + id;
+  console.log(id);
   return $.ajax({
-    url: "api/notes/" + id,
+    url: url,
     method: "DELETE"
   });
 };
