@@ -4,7 +4,7 @@ let $saveNoteBtn = $(".save-note");
 let $newNoteBtn = $(".new-note");
 let $noteList = $(".list-container .list-group");
 
-const baseUrl = 'http://localhost:3001'
+const baseUrl = 'http://localhost:3000'
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
